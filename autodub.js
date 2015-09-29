@@ -16,13 +16,12 @@ autoDub.newChat = function(data){
 	try{
 		var splitMsg = data.message.split(' ');
 		var msg = '';
-		for(String word : splitMsg)
-		{
+		for(String word : splitMsg){
 			if ((word.slice(-4) == '.png') || (word.slice(-4) == '.jpg') || (word.slice(-4) == '.gif') || (word.slice(-5) == '.jpeg')){
-				word = "<a class=\"autolink\" target=\"_blank\" href=\""+word+"\">"+word+"</a>"
+				word = "<a class=\"autolink\" target=\"_blank\" href=\""+word+"\">"+word+"</a>";
 			}
 			msg += word + " " ;
-		}
+		};
  		if (autoDub.blockInlineImages) $(".chat-main").find("p:last").html(msg);
 	} catch (e){
 
